@@ -4,82 +4,60 @@ input = sys.stdin.readline
 dr = [-1, 1, 0, 0]
 dc = [0, 0, -1, 1]
 
-
-def count_air():
-    global cheese
-    ch = 0
-    for r in range(R):
-        for c in range(C):
-            if MAP[r][c]:
-                ch += 1
-    cheese = ch
-
-    visited[0][0] = 1
-    nq = deque()
-    sq = deque([[0, 0]])
-    while sq:
-        sr, sc = sq.popleft()
-        for s in range(4):
-            nsr, nsc = sr + dr[s], sc + dc[s]
-            if nsr < 0 or nsr >= R or nsc < 0 or nsc >= C:
-                continue
-            if visited[nsr][nsc] or MAP[nsr][nsc]:
-                continue
-            visited[nsr][nsc] = 1
-            sq.append([nsr, nsc])
-            nq.append([nsr, nsc])
-    return nq
-
-
-def hole(hr, hc):
-    hq = deque([[hr, hc]])
-    pq = deque()
-    while hq:
-        pr, pc = hq.popleft()
-        for p in range(4):
-            npr, npc = pr + dr[p], pc + dc[p]
-            if npr < 0 or npr >= R or npc < 0 or npc >= C:
-                continue
-            if visited[npr][npc] or MAP[npr][npc]:
-                continue
-            visited[npr][npc] = 1
-            hq.append([npr, npc])
-            pq.append([npr, npc])
-    return pq
-
-
 R, C = map(int, input().split())
 MAP = [list(map(int, input().split())) for _ in range(R)]
+
+air = deque([[0, 0]])
+q = deque()
+
 visited = [[0] * C for _ in range(R)]
-cheese = 0
-q = count_air()
-turn = len(q)
+visited[0][0] = 1
 
-ans = -1
-pre_c = 0
-while q:
-    i, j = q.popleft()
-    turn -= 1
-    if turn < 0:
-        if cheese != 0:
-            pre_c = cheese
-        ans += 1
-        turn = len(q) - 1
-
+# 처음부터 공기에 노출된 치즈 표면 저장
+while air:
+    ar, ac = air.popleft()
     for d in range(4):
-        nr, nc = i + dr[d], j + dc[d]
-        if nr < 1 or nr >= R-1 or nc < 1 or nc >= C-1:
+        nar, nac = ar + dr[d], ac + dc[d]
+        # 범위를 벗어나는 경우
+        if nar < 0 or nar >= R or nac < 0 or nac >= C:
             continue
+        # 방문한 적이 있는 경우
+        if visited[nar][nac]:
+            continue
+        visited[nar][nac] = 1
+        # 공기에 노출된 치즈 표면
+        if MAP[nar][nac]:
+            q.append([nar, nac])
+        # 공기
+        else:
+            air.append([nar, nac])
+
+t = 1
+cheese = len(q)
+nq = deque()
+# 치즈가 녹는 과정
+while q:
+    r, c = q.popleft()
+    for d in range(4):
+        nr, nc = r + dr[d], c + dc[d]
+        # 범위를 벗어나는 경우
+        if nr < 0 or nr >= R or nc < 0 or nc >= C:
+            continue
+        # 방문한 적이 있는 경우
         if visited[nr][nc]:
             continue
-
         visited[nr][nc] = 1
-        q.append([nr, nc])
-        if MAP[nr][nc] == 0:
-            res = hole(nr, nc)
-            q += res
-            turn += len(res)
-            continue
-        cheese -= 1
+        # 다음에 녹을 치즈
+        if MAP[nr][nc]:
+            nq.append([nr, nc])
+        # 구멍에 의한 추가 공기
+        else:
+            q.append([nr, nc])
+    # 다음에 더 녹을 치즈 존재여부 확인
+    if len(q) == 0 and len(nq):
+        t += 1
+        q = nq
+        cheese = len(q)
+        nq = deque()
 
-print('{}\n{}'.format(ans, pre_c))
+print('{}\n{}'.format(t, cheese))
