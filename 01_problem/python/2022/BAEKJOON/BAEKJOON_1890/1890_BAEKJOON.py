@@ -1,42 +1,33 @@
-import sys
-from collections import deque
+import sys, heapq
 input = sys.stdin.readline
 
 N = int(input())
 MAP = [list(map(int, input().split())) for _ in range(N)]
+visited = [[0] * N for _ in range(N)]
+visited[0][0] = 1
 
-q = deque([(0, 0)])
-ans = 0
+# 누적 방문을 허용하기 위한 heapq 사용
+q = [(0, 0)]
 while q:
-    x, y = q.popleft()
-    # 목적지 도착 시 종료
-    if MAP[x][y] == 0:
-        ans += 1
-        continue
+    x, y = heapq.heappop(q)
+    n = MAP[x][y]
+    # 이동 횟수가 존재하는 경우
+    if n:
+        nx, ny = x + n, y + n
+        # 아래로 이동
+        if 0 <= nx < N:
+            # 한 번도 방문한 적 없는 경우
+            if visited[nx][y] == 0:
+                heapq.heappush(q, (nx, y))
+            # 방문 이력이 있는 경우
+            visited[nx][y] += visited[x][y]
 
-    nx, ny = x + MAP[x][y], y + MAP[x][y]
-    # 아래로 점프
-    if 0 <= nx < N:
-        if MAP[nx][y] == 0:
-            ans += 1
-            continue
-        mx, my = nx + MAP[nx][y], y + MAP[nx][y]
-        # 점프 후 이동
-        if 0 <= mx < N:
-            q.append((mx, y))
-        if 0 <= my < N:
-            q.append((nx, my))
+        # 우로 이동
+        if 0 <= ny < N:
+            # 한 번도 방문한 적 없는 경우
+            if visited[x][ny] == 0:
+                heapq.heappush(q, (x, ny))
+            # 방문 이력이 있는 경우
+            visited[x][ny] += visited[x][y]
 
-    # 오른쪽으로 점프
-    if 0 <= ny < N:
-        if MAP[x][ny] == 0:
-            ans += 1
-            continue
-        mx, my = x + MAP[x][ny], ny + MAP[x][ny]
-        # 점프 후 이동
-        if 0 <= mx < N:
-            q.append((mx, ny))
-        if 0 <= my < N:
-            q.append((x, my))
-
-print(ans)
+print(visited[N-1][N-1])
