@@ -1,0 +1,2 @@
+-- AINAL_INS 테이블의 모든 로우의 수
+SELECT COUNT(*) FROM ANIMAL_INS;
