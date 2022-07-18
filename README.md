@@ -75,16 +75,16 @@
 
 ### 1. programmers
 
-- | Lv1 | Lv2                                                                                                                               | Lv3 | Lv4 |
-  | --- | --------------------------------------------------------------------------------------------------------------------------------- | --- | --- |
-  |     | **Lv2** [59040 고양이와 개는 몇 마리 있을까](https://github.com/essk13/Algorithm/tree/main/01_problem/SQL/Programmers/Programmers_59040)      |     |     |
-  |     | **Lv2** [59046 루시와 엘라 찾기](https://github.com/essk13/Algorithm/tree/main/01_problem/SQL/Programmers/Programmers_59046)             |     |     |
-  |     | **Lv2** [59038 최솟값 구하기](https://github.com/essk13/Algorithm/tree/main/01_problem/SQL/Programmers/Programmers_59038)               |     |     |
-  |     | **Lv2** [59041 동명 동물 수 찾기](https://github.com/essk13/Algorithm/tree/main/01_problem/SQL/Programmers/Programmers_59041)            |     |     |
-  |     | **Lv2** [59047 이름에 el이 들어가는 동물 찾기](https://github.com/essk13/Algorithm/tree/main/01_problem/SQL/Programmers/Programmers_59047)    |     |     |
-  |     | **Lv2** [59412 입양 시각 구하기(1)](https://github.com/essk13/Algorithm/tree/main/01_problem/SQL/Programmers/Programmers_59412)          |     |     |
-  |     | **Lv2** [59406 동물 수 구하기](https://github.com/essk13/Algorithm/tree/main/01_problem/SQL/Programmers/Programmers_59406)              |     |     |
-  |     | **Lv2** [59410 NULL 처리하기](https://github.com/essk13/Algorithm/tree/main/01_problem/SQL/Programmers/Programmers_59410)             |     |     |
-  |     | **Lv2** [59409 중성화 여부 파악하기](https://github.com/essk13/Algorithm/tree/main/01_problem/SQL/Programmers/Programmers_59409)           |     |     |
-  |     | **Lv2** [59408 중복 제거하기](https://github.com/essk13/Algorithm/tree/main/01_problem/SQL/Programmers/Programmers_59408)               |     |     |
-  |     | **Lv2** [59414 DATETIME에서 DATE로 형 변환](https://github.com/essk13/Algorithm/tree/main/01_problem/SQL/Programmers/Programmers_59414) |     |     |
+- | Lv1 | Lv2                                                                                                                               | Lv3                                                                                                                     | Lv4 |
+  | --- | --------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- | --- |
+  |     | **Lv2** [59040 고양이와 개는 몇 마리 있을까](https://github.com/essk13/Algorithm/tree/main/01_problem/SQL/Programmers/Programmers_59040)      | **Lv3** [59042 없어진 기록 찾기](https://github.com/essk13/Algorithm/tree/main/01_problem/SQL/Programmers/Programmers_59042)   |     |
+  |     | **Lv2** [59046 루시와 엘라 찾기](https://github.com/essk13/Algorithm/tree/main/01_problem/SQL/Programmers/Programmers_59046)             | **Lv3** [59043 있었는데요 없었습니다](https://github.com/essk13/Algorithm/tree/main/01_problem/SQL/Programmers/Programmers_59043) |     |
+  |     | **Lv2** [59038 최솟값 구하기](https://github.com/essk13/Algorithm/tree/main/01_problem/SQL/Programmers/Programmers_59038)               |                                                                                                                         |     |
+  |     | **Lv2** [59041 동명 동물 수 찾기](https://github.com/essk13/Algorithm/tree/main/01_problem/SQL/Programmers/Programmers_59041)            |                                                                                                                         |     |
+  |     | **Lv2** [59047 이름에 el이 들어가는 동물 찾기](https://github.com/essk13/Algorithm/tree/main/01_problem/SQL/Programmers/Programmers_59047)    |                                                                                                                         |     |
+  |     | **Lv2** [59412 입양 시각 구하기(1)](https://github.com/essk13/Algorithm/tree/main/01_problem/SQL/Programmers/Programmers_59412)          |                                                                                                                         |     |
+  |     | **Lv2** [59406 동물 수 구하기](https://github.com/essk13/Algorithm/tree/main/01_problem/SQL/Programmers/Programmers_59406)              |                                                                                                                         |     |
+  |     | **Lv2** [59410 NULL 처리하기](https://github.com/essk13/Algorithm/tree/main/01_problem/SQL/Programmers/Programmers_59410)             |                                                                                                                         |     |
+  |     | **Lv2** [59409 중성화 여부 파악하기](https://github.com/essk13/Algorithm/tree/main/01_problem/SQL/Programmers/Programmers_59409)           |                                                                                                                         |     |
+  |     | **Lv2** [59408 중복 제거하기](https://github.com/essk13/Algorithm/tree/main/01_problem/SQL/Programmers/Programmers_59408)               |                                                                                                                         |     |
+  |     | **Lv2** [59414 DATETIME에서 DATE로 형 변환](https://github.com/essk13/Algorithm/tree/main/01_problem/SQL/Programmers/Programmers_59414) |                                                                                                                         |     |
