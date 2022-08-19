@@ -1,0 +1,5 @@
+N = int(input())
+arr = set(map(int, input().split()))
+arr = list(arr)
+arr.sort()
+print(*arr)
