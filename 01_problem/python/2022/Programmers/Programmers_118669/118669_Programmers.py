@@ -1,5 +1,6 @@
 import sys, heapq
 sys.setrecursionlimit(50000)
+# Fail
 
 
 def move(now, intensity):
